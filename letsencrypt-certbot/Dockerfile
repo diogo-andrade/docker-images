@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM ogomez/arm32v7-alpine:latest
 
 RUN apk add --no-cache certbot
 
