@@ -1,9 +1,8 @@
-FROM ogomez/arm32v7-alpine:latest
+FROM multiarch/alpine:armhf-v3.3
 
 RUN apk add --no-cache certbot
 
-VOLUME /etc/letsencrypt
-VOLUME /var/lib/letsencrypt
+VOLUME ["/etc/letsencrypt", "/var/lib/letsencrypt"]
 
 COPY etc/crontab /var/spool/cron/crontabs/certbot-renew
 
